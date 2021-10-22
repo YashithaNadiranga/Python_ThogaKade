@@ -1,1 +1,1 @@
-print("Thoga Kade")
+print("Thoga Kade CLI")
