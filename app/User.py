@@ -52,7 +52,8 @@ class User:
                 with open(f"{__db_user__}/{user_file}", 'r') as f:
                     data = json.load(f)
                     if data['password'] == password:
-                        self.__write_current_session(data['uid'],data['email'])
+                        self.__write_current_session(
+                            data['uid'], data['email'])
                         print("User successfully login.!")
                     else:
                         print("Error: password not matched")
@@ -67,3 +68,8 @@ class User:
                 'id': id,
                 'email': email
             }, f)
+
+    def view_session(self):
+        with open(__db_user_session__,'r') as f:
+            sess =  json.load(f)
+            print(f"Current User ID: {sess['id']}\nCurrent User Email: {sess['email']}")
