@@ -38,7 +38,7 @@ Can view all items in the system
 python main.py item all
 ```
 #### find
-Can find specific item in the system
+Can find specific item in the system 
 ```cmd
 python main.py item find
 ```
