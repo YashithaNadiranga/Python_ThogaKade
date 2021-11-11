@@ -1,6 +1,9 @@
 # Python_ThogaKade
 POS_CLI_Python
 
+-Presentation  [View Here](https://docs.google.com/presentation/d/1Rxt9dSlV_cM_FYMauj65vzosFrNwSGl7futOI5TQyTY/edit?usp=sharing)
+
+-Video - [View Here](https://drive.google.com/drive/folders/1j2ra3sDZn1Ohum0GSfT6Z5JsqJD6FAnc?usp=sharing)
 # Instructions
 ----------
 
