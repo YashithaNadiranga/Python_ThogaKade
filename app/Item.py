@@ -19,7 +19,7 @@ class Item:
                 'qty': qty
             }
             json.dump(data, f)
-        print("Item Saved successfully.!")
+        print("Item Saved")
 
     def __get_item_list(self, name):
         try:
@@ -35,15 +35,28 @@ class Item:
             with open(f"{__db_items__}/{item}", "r") as f:
                 data = json.load(f)
                 print(f"\nID: {data['id']} Name: {data['name']} Price: {data['price']} QTY: {data['qty']}", end='\n')
+                return data
         else:
-            print("No Item found.!")
+            print("No Item")
 
     def getAll(self):
         files = os.listdir(__db_items__)
+        all_items = []
         if len(files) > 0:
             for fs in files:
                 with open(f"{__db_items__}/{fs}", "r") as f:
                     data = json.load(f)
                     print(f"ID: {data['id']} Name: {data['name']} Price: {data['price']} QTY: {data['qty']}", end='\n')
+                    all_items.append(data)
+            return all_items
         else:
             print("No Items found.!")
+            return None
+
+    @validate(1, ARGS)
+    def is_item_exist(self, name):
+        item = self.__get_item_list(name)
+        if item != None:
+            return item.__contains__(name)
+        else:
+            return False

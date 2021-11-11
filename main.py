@@ -17,7 +17,7 @@ def init():
         os.makedirs('db/users')
         os.makedirs('db/orders')
     else:
-        print('Already initialized the System')
+        print('Already initialized')
 
 
 @get_inputs(params=['email', 'password'])
@@ -47,9 +47,32 @@ def item_add(id, name, price, qty):
 def item_find(name):
     item.find(name)
 
+def order_all():
+    order.all()
+
+def order_place():
+    item_list = []
+    item_get_all()
+    while True:
+        item_name = input('\nPlease Enter Your Item Name: ')
+        qty = input('\nPlace Enter Qty: ')
+        if item.is_item_exist(item_name):
+            item_list.append([item_name, qty])
+        else:
+            print("Sorry Item can not found. please check again.", end="\n")
+        is_continue = input("Do you want to add more items (Yes/No): ")
+        if is_continue.lower() == "no":
+            break
+        else:
+            continue
+    result = order.place(item_list)
+    if result == True:
+        print("\nYour order has been placed.")
+    else:
+        print("\nPlease Try again.!")
+
 
 if __name__ == "__main__":
-    print(banner)
     args = sys.argv[1:]
 
     if len(args) <= 0:
@@ -58,7 +81,7 @@ if __name__ == "__main__":
     elif args[0] == "system" and args[1] == "init":
         init()
     elif not os.path.exists('db'):
-        print('Please initialize the system before use.!\nuse main.py system init')
+        print('Please initialize the system before use.!\nuse python main.py system init')
     elif args[0] == "help":
         print(user_help)
     else:
@@ -79,3 +102,8 @@ if __name__ == "__main__":
                 user_login_inputs()
             elif commend == "session":
                 user_view_session()
+        if section == "order":
+            if commend == "place":
+                order_place()
+            if commend == "all":
+                order_all()

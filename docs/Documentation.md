@@ -1,32 +1,54 @@
 # Instructions
 ----------
-## System initialize
-### Initialize 
-This will initialize system with db folder
+
+### System Initialize 
+This will initialize system with databaase folder
+
 ```
-main.py system init
+python main.py system init
 ```
 ## User
 
 ### Registration
-User need to complete registration before use system use below commend to register the it will prompt to enter details
+Can register to the system 
 ```
-main.py user reg
+python main.py user reg
 ```
 
 ### Login
-After registration user need to login to the system then automatically system create session for user
+Can login to the system  
 ```
-main.py user login
+python main.py user login
 ```
 
 ## Item
-This commend user for create update delete and view all the Items
-### create
+
+### add
+Can add new items to the system
 ```
-main.py item add
+python main.py item add
 ```
 
+#### all
+Can view all items in the system 
+```cmd
+python main.py item all
+```
+#### find
+Can find specific item in the system
+```cmd
+python main.py item find
+```
 
+## Order
 
-<!-- https://github.com/ClassExamples/IJSE_PYTHON_ASSINGMENT_1 -->
+#### Place Order
+Can place order to the system  
+```cmd
+python main.py order place
+```
+#### View All
+Can view current user's all orders
+```cmd
+python main.py order all
+```
