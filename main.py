@@ -16,6 +16,7 @@ def init():
         os.makedirs('db/items')
         os.makedirs('db/users')
         os.makedirs('db/orders')
+        print('System initialized Successfully')
     else:
         print('Already initialized')
 
