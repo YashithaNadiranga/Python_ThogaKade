@@ -82,7 +82,7 @@ if __name__ == "__main__":
     elif args[0] == "system" and args[1] == "init":
         init()
     elif not os.path.exists('db'):
-        print('Please initialize the system before use.!\nuse python main.py system init')
+        print('Please initialize the system before use!\nuse python main.py system init')
     elif args[0] == "help":
         print(user_help)
     else:
